@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+
+// Bootstrap
+@import '../node_modules/bootstrap/scss/bootstrap';
+
+// Override
+@import 'assets/scss/override/bootstrap';
+
+// Bootstrap needed after override
+@import '../node_modules/bootstrap/scss/containers';
+
+// Variables
+@import 'assets/scss/variables/vars';
+
+// Modules
+@import 'assets/scss/modules/base';

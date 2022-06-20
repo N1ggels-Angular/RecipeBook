@@ -1,0 +1,47 @@
+$enable-cssgrid: true;
+$enable-grid-classes: true;
+
+$container-gutter-widths: (
+    xs: 16px,
+    md: 48px
+);
+
+$grid-gutter-widths: (
+    xs: 8px,
+    md: 32px
+);
+    
+$container-max-widths: (
+    sm: 540px + (map-get($container-gutter-widths, xs) * 2),
+    md: 720px + (map-get($container-gutter-widths, md) * 2),
+    lg: 960px + (map-get($container-gutter-widths, md) * 2),
+    xl: 1140px + (map-get($container-gutter-widths, md) * 2),
+    xxl: 1504px + (map-get($container-gutter-widths, md) * 2),
+);
+
+$grid-columns: 12;
+$grid-gutter-width: map-get($grid-gutter-widths, xs);
+
+@include media-breakpoint-up(xs) {
+    .container {
+        --bs-gutter-x: #{map-get($container-gutter-widths, xs)};
+    }
+
+    .row {
+        --bs-gutter-x: #{map-get($grid-gutter-widths, xs)};
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .container {
+        --bs-gutter-x: #{map-get($container-gutter-widths, md)};
+    }
+
+    .row {
+        --bs-gutter-x: #{map-get($grid-gutter-widths, md)};
+
+        > * {
+            --bs-gutter-x: #{map-get($grid-gutter-widths, md)};
+        }
+    }
+}
