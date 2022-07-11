@@ -1,0 +1,14 @@
+.btn {
+
+  margin: .5rem 1rem;
+
+  &:first-child {
+    
+    margin-left: 0;
+  }
+
+  &:last-child {
+    
+    margin-right: 0;
+  }
+}
