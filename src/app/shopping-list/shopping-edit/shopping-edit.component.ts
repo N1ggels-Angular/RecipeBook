@@ -33,11 +33,7 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
       }
     );
   }
-
-  ngOnDestroy(): void {
-    this.subscription.unsubscribe();
-  }
-
+  
   onSubmit(form: NgForm) {
     const value = form.value;
     const newIngredient = new Ingredient(value.name, value.amount)
@@ -47,6 +43,15 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
       this.shoppingListService.addIngredient(newIngredient);
     }
     this.editMode = false;
+    form.reset();
+  }
+
+  onClear() {
+    this.editMode = false;
     this.slForm.reset();
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 }
