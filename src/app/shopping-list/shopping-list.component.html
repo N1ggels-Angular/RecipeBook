@@ -5,11 +5,12 @@
         <ul class="list-group">
           <a 
             class="list-group-item" 
-            style="cursor: pointer;"
+            style="cursor: pointer; display: flex; flex-direction: row; justify-content: space-between; align-items: center;"
             *ngFor="let ingredient of ingredients; let i = index"
             (click)="onEditItem(i)"
           >
             {{ ingredient.name }} ({{ ingredient.amount }})
+            <span style="background-color: red; padding: .5rem; line-height: 1rem; border-radius: .25rem; color: white; user-select: none;" (click)="onDelete(i)">Delete</span>
           </a>
         </ul>
     </div>
