@@ -35,7 +35,8 @@
               type="text" 
               id="imagePath" 
               class="form-control"
-              formControlName="imagePath" />
+              formControlName="imagePath"
+              #imagePath />
           </div>
         </div>
       </div>
@@ -43,7 +44,7 @@
       <div class="row">
         <div class="col-12">
           <div class="form-group">
-            <img src="" alt="Nice Image" class="img-responsive" />
+            <img [src]="imagePath.value" alt="Nice Image" class="img-responsive" style="max-width: 100%;" />
           </div>
         </div>
       </div>
