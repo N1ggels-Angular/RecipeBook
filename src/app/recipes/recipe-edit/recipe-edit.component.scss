@@ -1,5 +1,5 @@
 input, textarea {
-  &.ng-invalid {
+  &.ng-invalid.ng-touched {
     
     border: .063rem solid red;
   }
