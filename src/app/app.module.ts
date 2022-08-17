@@ -25,6 +25,7 @@ import { DataStorageService } from './shared/data-storage.service';
 import { RecipesResolverService } from './recipes/recipes-resolver.service';
 import { AuthService } from './auth/auth.service';
 import { AuthInterceptorService } from './auth/auth-interceptor.service';
+import { AuthGuard } from './auth/auth.guard';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,9 @@ import { AuthInterceptorService } from './auth/auth-interceptor.service';
       provide: HTTP_INTERCEPTORS, 
       useClass: AuthInterceptorService, 
       multi: true
-    }],
+    },
+    AuthGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
