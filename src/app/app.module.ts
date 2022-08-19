@@ -10,10 +10,6 @@ import { ShoppingListModule } from './shopping-list/shopping-list.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { AuthComponent } from './auth/auth.component';
-import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
-
-import { DropdownDirective } from './shared/dropdown.directive';
-import { PlaceholderDirective } from './shared/placeholder/placeholder.directive';
 
 import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { RecipeService } from './recipes/recipe.service';
@@ -22,17 +18,13 @@ import { RecipesResolverService } from './recipes/recipes-resolver.service';
 import { AuthService } from './auth/auth.service';
 import { AuthInterceptorService } from './auth/auth-interceptor.service';
 import { AuthGuard } from './auth/auth.guard';
-import { AlertComponent } from './shared/alert/alert.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    DropdownDirective,
-    AuthComponent,
-    LoadingSpinnerComponent,
-    AlertComponent,
-    PlaceholderDirective
+    AuthComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +33,8 @@ import { AlertComponent } from './shared/alert/alert.component';
     ReactiveFormsModule,
     HttpClientModule,
     RecipesModule,
-    ShoppingListModule
+    ShoppingListModule,
+    SharedModule
   ],
   providers: [
     ShoppingListService, 
